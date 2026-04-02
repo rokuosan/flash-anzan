@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フラッシュ暗算</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- 設定画面 -->
+    <div id="screen-config" class="screen active">
+      <h1>フラッシュ暗算</h1>
+      <div class="config-form">
+        <div class="config-row">
+          <label>桁数</label>
+          <div class="btn-group" id="digits-group">
+            <button class="option-btn active" data-value="1">1桁</button>
+            <button class="option-btn" data-value="2">2桁</button>
+            <button class="option-btn" data-value="3">3桁</button>
+          </div>
+        </div>
+        <div class="config-row">
+          <label>口数（数字の個数）</label>
+          <div class="btn-group" id="count-group">
+            <button class="option-btn" data-value="3">3口</button>
+            <button class="option-btn active" data-value="5">5口</button>
+            <button class="option-btn" data-value="7">7口</button>
+            <button class="option-btn" data-value="10">10口</button>
+          </div>
+        </div>
+        <div class="config-row">
+          <label>表示速度</label>
+          <div class="btn-group" id="speed-group">
+            <button class="option-btn" data-value="2000">遅い</button>
+            <button class="option-btn active" data-value="1000">普通</button>
+            <button class="option-btn" data-value="500">速い</button>
+            <button class="option-btn" data-value="250">超速</button>
+          </div>
+        </div>
+        <button id="start-btn" class="primary-btn">スタート</button>
+      </div>
+    </div>
+
+    <!-- カウントダウン画面 -->
+    <div id="screen-countdown" class="screen">
+      <div id="countdown-number" class="big-number"></div>
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="screen-game" class="screen">
+      <div id="flash-number" class="flash-number"></div>
+      <div id="progress-bar-wrap">
+        <div id="progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- 回答画面 -->
+    <div id="screen-answer" class="screen">
+      <h2>答えは？</h2>
+      <input type="number" id="answer-input" placeholder="答えを入力" inputmode="numeric">
+      <button id="submit-btn" class="primary-btn">確認</button>
+    </div>
+
+    <!-- 結果画面 -->
+    <div id="screen-result" class="screen">
+      <div id="result-icon"></div>
+      <div id="result-message"></div>
+      <div id="result-detail"></div>
+      <div id="score-display"></div>
+      <button id="retry-btn" class="primary-btn">もう一度</button>
+      <button id="config-btn" class="secondary-btn">設定に戻る</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
